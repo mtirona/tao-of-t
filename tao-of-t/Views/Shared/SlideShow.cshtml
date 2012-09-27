@@ -1,0 +1,91 @@
+﻿        <div class="container">
+            <div class="wrapper">
+                <div id="ei-slider" class="ei-slider">
+                    <ul class="ei-slider-large">
+						<li id="image1">
+                            <div class="ei-title">
+                                <h2>Passionate</h2>
+                                <h3>Seeker</h3>
+                            </div>
+                        </li>
+                        <li id="image2">
+                            <div class="ei-title">
+                                <h2>Creative</h2>
+                                <h3>Duet</h3>
+                            </div>
+                        </li>
+                        <li id="image3">
+                            <div class="ei-title">
+                                <h2>Friendly</h2>
+                                <h3>Devil</h3>
+                            </div>
+                        </li>
+                        <li id="image4">
+                            <div class="ei-title">
+                                <h2>Tranquilent</h2>
+                                <h3>Compatriot</h3>
+                            </div>
+                        </li>
+                        <li id="image5">
+                            <div class="ei-title">
+                                <h2>Insecure</h2>
+                                <h3>Hussler</h3>
+                            </div>
+                        </li>
+                        <li id="image6">
+                            <div class="ei-title">
+                                <h2>Loving</h2>
+                                <h3>Rebel</h3>
+                            </div>
+                        </li>
+                        <li id="image7">
+                            <div class="ei-title">
+                                <h2>Crazy</h2>
+                                <h3>Friend</h3>
+                            </div>
+                        </li>
+                    </ul><!-- ei-slider-large -->
+                    <ul class="ei-slider-thumbs">
+                        <li class="ei-slider-element">Current</li>
+						<li id="thumb1"><a href="#">Slide 6</a></li>
+                        <li id="thumb2"><a href="#">Slide 1</a></li>
+                        <li id="thumb3"><a href="#">Slide 2</a></li>
+                        <li id="thumb4"><a href="#">Slide 3</a></li>
+                        <li id="thumb5"><a href="#">Slide 4</a></li>
+                        <li id="thumb6"><a href="#">Slide 5</a></li>
+                        <li id="thumb7"><a href="#">Slide 7</a></li>
+                    </ul><!-- ei-slider-thumbs -->
+                </div><!-- ei-slider -->
+            </div><!-- wrapper -->
+        </div>
+
+        <script type="text/javascript">
+            $(function () {
+                $('#ei-slider').eislideshow({
+                    animation: 'center',
+                    autoplay: true,
+                    slideshow_interval: 3000,
+                    titlesFactor: 0
+                });
+            });
+
+            $(document).ready(function () {
+                $("#image1").append("#fog_london");
+                $("#image2").append("#love");
+                $("#image3").append("#love_never_fails");
+                $("#image4").append("#old_clock");
+                $("#image5").append("#old_water_canal");
+                $("#image6").append("#walking_the_dog");
+                $("#image7").append("#water_fall");
+
+                $("#thumb1").append("#fog_london_thumb");
+                $("#thumb2").append("#love_thumb");
+                $("#thumb3").append("#love_never_fails_thumb");
+                $("#thumb4").append("#old_clock_thumb");
+                $("#thumb5").append("#old_water_canal_thumb");
+                $("#thumb6").append("#walking_the_dog_thumb");
+                $("#thumb7").append("#water_fall_thumb");
+
+            });
+
+        </script>
