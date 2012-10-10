@@ -189,7 +189,6 @@
     <Content Include="Content\jquery.mobile.theme-1.1.1.min.css" />
     <None Include="Content\less\styles.less" />
     <None Include="Content\less\mixins.less" />
-    <Content Include="Content\slideshow\demo.css" />
     <Content Include="Content\slideshow\noscript.css" />
     <Content Include="Content\slideshow\reset.css" />
     <Content Include="Content\slideshow\style.css" />
@@ -254,20 +253,20 @@
     <Content Include="Images\divider_horizontal.png" />
     <Content Include="Images\divider_vertical.png" />
     <Content Include="Images\left_gradient_column.png" />
-    <Content Include="Images\SlideShow\fog_london.png" />
-    <Content Include="Images\SlideShow\fog_london_thumb.png" />
-    <Content Include="Images\SlideShow\love.png" />
-    <Content Include="Images\SlideShow\love_never_fails.png" />
-    <Content Include="Images\SlideShow\love_never_fails_thumb.png" />
-    <Content Include="Images\SlideShow\love_thumb.png" />
-    <Content Include="Images\SlideShow\old_clock.png" />
-    <Content Include="Images\SlideShow\old_clock_thumb.png" />
-    <Content Include="Images\SlideShow\old_water_canal.png" />
-    <Content Include="Images\SlideShow\old_water_canal_thumb.png" />
-    <Content Include="Images\SlideShow\walking_the_dog.png" />
-    <Content Include="Images\SlideShow\walking_the_dog_thumb.png" />
-    <Content Include="Images\SlideShow\water_fall.png" />
-    <Content Include="Images\SlideShow\water_fall_thumb.png" />
+    <Content Include="Images\slideshow\fog_london.png" />
+    <Content Include="Images\slideshow\fog_london_thumb.png" />
+    <Content Include="Images\slideshow\love.png" />
+    <Content Include="Images\slideshow\love_never_fails.png" />
+    <Content Include="Images\slideshow\love_never_fails_thumb.png" />
+    <Content Include="Images\slideshow\love_thumb.png" />
+    <Content Include="Images\slideshow\old_clock.png" />
+    <Content Include="Images\slideshow\old_clock_thumb.png" />
+    <Content Include="Images\slideshow\old_water_canal.png" />
+    <Content Include="Images\slideshow\old_water_canal_thumb.png" />
+    <Content Include="Images\slideshow\walking_the_dog.png" />
+    <Content Include="Images\slideshow\walking_the_dog_thumb.png" />
+    <Content Include="Images\slideshow\water_fall.png" />
+    <Content Include="Images\slideshow\water_fall_thumb.png" />
     <Content Include="Scripts\jquery-1.7.1.js" />
     <Content Include="Scripts\jquery-1.7.1.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
@@ -295,7 +294,6 @@
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
-    <Content Include="Content\Site.css" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Images\accent.png" />
     <Content Include="Images\bullet.png" />
