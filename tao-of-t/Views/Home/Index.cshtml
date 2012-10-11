@@ -4,4 +4,10 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Index1</h2>
+<div id="home">
+    <section id="slideshow">
+        @Html.Partial("SlideShow")
+    </section>
+
+    <section id="content"></section>
+</div>
