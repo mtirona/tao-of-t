@@ -1,25 +1,26 @@
 ﻿<nav id="navigationmenu">
+
     <ul>
         <li>
-            @Html.ActionLink("Home", "Index", "Home") 
+            @Html.ActionLink("Home", "Index", "Home", new { @class = "navigationmenu" }) 
         </li>
         <li>
-            @Html.ActionLink("About Me", "AboutMe", "Home")
+            @Html.ActionLink("About Me", "AboutMe", "Home", new { @class = "navigationmenu" })
         </li>
         <li>
-            @Html.ActionLink("Services Provided", "Services", "Home")
+            @Html.ActionLink("Services Provided", "Services", "Home", new { @class = "navigationmenu" })
         </li>
         <li>
-            @Html.ActionLink("Appointment Request", "Appointment", "Home")
+            @Html.ActionLink("Appointment Request", "Appointment", "Home", new { @class = "navigationmenu" })
         </li>
         <li>
-            @Html.ActionLink("Common Questions", "Questions", "Home") 
+            @Html.ActionLink("Common Questions", "Questions", "Home", new { @class = "navigationmenu" }) 
         </li>
         <li>
-            @Html.ActionLink("Sign Up", "SignUp", "Home")
+            @Html.ActionLink("Sign Up", "SignUp", "Home", new { @class = "navigationmenu" })
         </li>
         <li>
-            @Html.ActionLink("Links & Resources", "LinksResources", "Home")
+            @Html.ActionLink("Links & Resources", "LinksResources", "Home", new { @class = "navigationmenu" })
         </li>
     </ul>
 </nav>
