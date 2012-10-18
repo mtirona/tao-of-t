@@ -1,6 +1,7 @@
+
 .ei-slider{
 	position: relative;
-	width: 100%;
+	width: 111.2%;
 	max-width: 1920px;
 	height: 400px;
 	margin: 0 auto;
@@ -60,6 +61,8 @@
 }
 .ei-slider-thumbs{
 	height: 13px;
+    width: 90%;
+    float: left;
 	margin: 0 auto;
 	position: relative;
 }
@@ -101,7 +104,7 @@
     transition: background 0.2s ease;
 }
 .ei-slider-thumbs li a:hover{
-	background-color: #f0f0f0;
+	background-color: #800000;
 }
 .ei-slider-thumbs li img{
 	position: absolute;

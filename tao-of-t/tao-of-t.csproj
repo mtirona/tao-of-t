@@ -39,6 +39,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Antlr3.Runtime, Version=3.3.1.7705, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\WebGrease.1.1.0\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -50,6 +54,10 @@
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Optimization, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.0.0\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Extensions" />
@@ -91,9 +99,6 @@
       <Private>True</Private>
       <HintPath>..\packages\Microsoft.AspNet.Mvc.4.0.20710.0\lib\net40\System.Web.Mvc.dll</HintPath>
     </Reference>
-    <Reference Include="System.Web.Optimization">
-      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.0.0\lib\net40\System.Web.Optimization.dll</HintPath>
-    </Reference>
     <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <Private>True</Private>
       <HintPath>..\packages\Microsoft.AspNet.Razor.2.0.20710.0\lib\net40\System.Web.Razor.dll</HintPath>
@@ -109,6 +114,10 @@
     <Reference Include="System.Web.WebPages.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <Private>True</Private>
       <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\WebGrease.1.1.0\lib\WebGrease.dll</HintPath>
     </Reference>
     <Reference Include="WebMatrix.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <Private>True</Private>
@@ -146,14 +155,6 @@
       <Private>True</Private>
       <HintPath>..\packages\DotNetOpenAuth.OpenId.RelyingParty.4.0.3.12153\lib\net40-full\DotNetOpenAuth.OpenId.RelyingParty.dll</HintPath>
     </Reference>
-    <Reference Include="WebGrease">
-      <Private>True</Private>
-      <HintPath>..\packages\WebGrease.1.1.0\lib\WebGrease.dll</HintPath>
-    </Reference>
-    <Reference Include="Antlr3.Runtime">
-      <Private>True</Private>
-      <HintPath>..\packages\WebGrease.1.1.0\lib\Antlr3.Runtime.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\AuthConfig.cs" />
@@ -167,6 +168,7 @@
       <DependentUpon>strings.resx</DependentUpon>
     </Compile>
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AppointmentController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
     <Compile Include="Global.asax.cs">
@@ -176,6 +178,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\frontierCalendar\colorpicker.css" />
+    <Content Include="Content\frontierCalendar\jquery-frontier-cal-1.3.2.css" />
+    <Content Include="Content\frontierCalendar\jquery-ui-1.8.2.custom.css" />
+    <Content Include="Content\frontierCalendar\layout.css" />
     <Content Include="Content\less\colors.less" />
     <Content Include="Content\fonts\BMmini.TTF" />
     <Content Include="Content\fonts\ECHELON_.TTF" />
@@ -255,6 +261,59 @@
     <Content Include="Global.asax" />
     <Content Include="Content\less\variables.less" />
     <None Include="Scripts\jquery-1.7.1.intellisense.js" />
+    <Content Include="Images\calendar\blank.gif" />
+    <Content Include="Images\calendar\bw-tree.jpg" />
+    <Content Include="Images\calendar\colorpicker_background.png" />
+    <Content Include="Images\calendar\colorpicker_hex.png" />
+    <Content Include="Images\calendar\colorpicker_hsb_b.png" />
+    <Content Include="Images\calendar\colorpicker_hsb_h.png" />
+    <Content Include="Images\calendar\colorpicker_hsb_s.png" />
+    <Content Include="Images\calendar\colorpicker_indic.gif" />
+    <Content Include="Images\calendar\colorpicker_overlay.png" />
+    <Content Include="Images\calendar\colorpicker_rgb_b.png" />
+    <Content Include="Images\calendar\colorpicker_rgb_g.png" />
+    <Content Include="Images\calendar\colorpicker_rgb_r.png" />
+    <Content Include="Images\calendar\colorpicker_select.gif" />
+    <Content Include="Images\calendar\colorpicker_submit.png" />
+    <Content Include="Images\calendar\custom_background.png" />
+    <Content Include="Images\calendar\custom_hex.png" />
+    <Content Include="Images\calendar\custom_hsb_b.png" />
+    <Content Include="Images\calendar\custom_hsb_h.png" />
+    <Content Include="Images\calendar\custom_hsb_s.png" />
+    <Content Include="Images\calendar\custom_indic.gif" />
+    <Content Include="Images\calendar\custom_rgb_b.png" />
+    <Content Include="Images\calendar\custom_rgb_g.png" />
+    <Content Include="Images\calendar\custom_rgb_r.png" />
+    <Content Include="Images\calendar\custom_submit.png" />
+    <Content Include="Images\calendar\dayCellCurrentMonth.png" />
+    <Content Include="Images\calendar\dayCellOtherMonth.png" />
+    <Content Include="Images\calendar\dayCellToday.png" />
+    <Content Include="Images\calendar\select.png" />
+    <Content Include="Images\calendar\select2.png" />
+    <Content Include="Images\calendar\slider.png" />
+    <Content Include="Images\calendar\ui-anim_basic_16x16.gif" />
+    <Content Include="Images\calendar\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Images\calendar\ui-bg_flat_0_eeeeee_40x100.png" />
+    <Content Include="Images\calendar\ui-bg_flat_55_ffffff_40x100.png" />
+    <Content Include="Images\calendar\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Images\calendar\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Images\calendar\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Images\calendar\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Images\calendar\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Images\calendar\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Images\calendar\ui-bg_highlight-soft_100_f6f6f6_1x100.png" />
+    <Content Include="Images\calendar\ui-bg_highlight-soft_25_0073ea_1x100.png" />
+    <Content Include="Images\calendar\ui-bg_highlight-soft_50_dddddd_1x100.png" />
+    <Content Include="Images\calendar\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Images\calendar\ui-icons_0073ea_256x240.png" />
+    <Content Include="Images\calendar\ui-icons_222222_256x240.png" />
+    <Content Include="Images\calendar\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Images\calendar\ui-icons_454545_256x240.png" />
+    <Content Include="Images\calendar\ui-icons_666666_256x240.png" />
+    <Content Include="Images\calendar\ui-icons_888888_256x240.png" />
+    <Content Include="Images\calendar\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Images\calendar\ui-icons_ff0084_256x240.png" />
+    <Content Include="Images\calendar\ui-icons_ffffff_256x240.png" />
     <Content Include="Images\divider_horizontal.png" />
     <Content Include="Images\divider_vertical.png" />
     <Content Include="Images\left_gradient_column.png" />
@@ -273,6 +332,16 @@
     <Content Include="Images\slideshow\walking_the_dog_thumb.png" />
     <Content Include="Images\slideshow\water_fall.png" />
     <Content Include="Images\slideshow\water_fall_thumb.png" />
+    <Content Include="Scripts\frontierCalendar\colorpicker.js" />
+    <Content Include="Scripts\frontierCalendar\eye.js" />
+    <Content Include="Scripts\frontierCalendar\jquery.qtip-1.0.js" />
+    <Content Include="Scripts\frontierCalendar\jquery.qtip-1.0.min.js" />
+    <Content Include="Scripts\frontierCalendar\layout.js" />
+    <Content Include="Scripts\frontierCalendar\utils.js" />
+    <Content Include="Scripts\frontierCalendar\z-jquery-frontier-cal-1.3.2.js" />
+    <Content Include="Scripts\frontierCalendar\jquery-frontier-cal-1.3.2.min.js" />
+    <Content Include="Scripts\frontierCalendar\jquery.qtip-1.0.0-rc3.min.js" />
+    <Content Include="Scripts\frontierCalendar\jshashtable-2.1.js" />
     <Content Include="Scripts\jquery-1.7.1.js" />
     <Content Include="Scripts\jquery-1.7.1.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
@@ -326,7 +395,6 @@
     <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
-    <Content Include="Views\Home\Index_originial.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
@@ -337,6 +405,9 @@
     <Content Include="Views\Shared\SlideShow.cshtml" />
     <Content Include="Views\Shared\Logo.cshtml" />
     <Content Include="Views\Shared\NavigationMenu.cshtml" />
+    <Content Include="Views\Shared\AppointmentPartial.cshtml" />
+    <Content Include="Views\Appointment\Index.cshtml" />
+    <Content Include="Views\Shared\FooterPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

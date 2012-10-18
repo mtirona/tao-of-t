@@ -8900,7 +8900,7 @@ var rtable = /^t(?:able|d|h)$/i,
 
 if ( "getBoundingClientRect" in document.documentElement ) {
 	jQuery.fn.offset = function( options ) {
-		var elem = this[0], box;
+		var elem = this[0], box = null;
 
 		if ( options ) {
 			return this.each(function( i ) {
@@ -8918,7 +8918,10 @@ if ( "getBoundingClientRect" in document.documentElement ) {
 
 		try {
 			box = elem.getBoundingClientRect();
-		} catch(e) {}
+		} catch (e) {
+		    // modified for IE
+		    box = { top: elem.offsetTop, left: elem.offsetLeft }
+		}
 
 		var doc = elem.ownerDocument,
 			docElem = doc.documentElement;

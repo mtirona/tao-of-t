@@ -1,4 +1,4 @@
-﻿
+﻿@import "colors";
 
 .linearGradient(@stop1:0, @color1:#ccc, @stop2:50%, @color2:#ddd, @stop3:100%, @color3:#ccc) {
     background-color: @color2;
@@ -9,5 +9,54 @@
     background: linear-gradient(center bottom, @color1 @stop1, @color2 @stop2, @color3 @stop3);
     -pie-background: linear-gradient(@color1, @color2, @color3);
     filter: e(%("progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=%d,endColorstr=%d)", @color1, @color3));
+}
+
+.vertical-gradient{
+	background-image: linear-gradient(left , rgb(183,183,183) 0%, rgb(240,241,239) 70%);
+	background-image: -o-linear-gradient(left , rgb(183,183,183) 0%, rgb(240,241,239) 70%);
+	background-image: -moz-linear-gradient(left , rgb(183,183,183) 0%, rgb(240,241,239) 70%);
+	background-image: -webkit-linear-gradient(left , rgb(183,183,183) 0%, rgb(240,241,239) 70%);
+	background-image: -ms-linear-gradient(left , rgb(183,183,183) 0%, rgb(240,241,239) 70%);
+
+	background-image: -webkit-gradient(
+		linear,
+		left top,
+		right top,
+		color-stop(0, rgb(183,183,183)),
+		color-stop(0.7, rgb(240,241,239))
+	);
+}
+
+.horizontal-gradient {
+		background-image: linear-gradient(bottom, rgb(183,183,183) 34%, rgb(240,241,239) 70%);
+		background-image: -o-linear-gradient(bottom, rgb(183,183,183) 34%, rgb(240,241,239) 70%);
+		background-image: -moz-linear-gradient(bottom, rgb(183,183,183) 34%, rgb(240,241,239) 70%);
+		background-image: -webkit-linear-gradient(bottom, rgb(183,183,183) 34%, rgb(240,241,239) 70%);
+		background-image: -ms-linear-gradient(bottom, rgb(183,183,183) 34%, rgb(240,241,239) 70%);
+
+		background-image: -webkit-gradient(
+			linear,
+			left bottom,
+			left top,
+			color-stop(0.34, rgb(183,183,183)),
+			color-stop(0.7, rgb(240,241,239))
+	);
+}
+
+.footer-gradient {
+    background-image: linear-gradient(bottom, #800000 4%, #8B6608 50%);
+    background-image: -o-linear-gradient(bottom, #800000 4%, #8B6608 50%);
+    background-image: -moz-linear-gradient(bottom, #800000 4%, #8B6608 50%);
+    background-image: -webkit-linear-gradient(bottom, #800000 4%, #8B6608 50%);
+    background-image: -ms-linear-gradient(bottom, #800000 4%, #8B6608 50%);
+    background-image: -webkit-gradient( linear, left bottom, left top, color-stop(0.04, #800000), color-stop(0.5, #8B6608) );
+}
+
+.box-border-shadow {
+    border-bottom: 3px solid @section-border;
+    border-right: 3px solid @section-border;
+    -webkit-box-shadow: 4px 4px 5px rgba(50, 50, 50, 0.75);
+    -moz-box-shadow: 4px 4px 5px rgba(50, 50, 50, 0.75);
+    box-shadow: 4px 4px 5px rgba(50, 50, 50, 0.75);
 }
 
