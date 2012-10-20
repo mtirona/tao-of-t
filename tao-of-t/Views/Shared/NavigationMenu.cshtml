@@ -1,20 +1,21 @@
-﻿<nav id="navigationmenu">
+﻿
+<nav id="navigationmenu">
 
     <ul>
         <li>
             @Html.ActionLink("Home", "Index", "Home", new { @class = "navigationmenu" }) 
         </li>
         <li>
-            @Html.ActionLink("About Me", "AboutMe", "Home", new { @class = "navigationmenu" })
+            @Html.ActionLink("About Me", "Index", new { controller = "About" }, new { @class = "navigationmenu" })
         </li>
         <li>
-            @Html.ActionLink("Services Provided", "Services", "Home", new { @class = "navigationmenu" })
+            @Html.ActionLink("Services Provided", "Index", new { controller = "Services" }, new { @class = "navigationmenu" })
         </li>
         <li>
             @Html.ActionLink("Appointment Request", "Appointment", "Home", new { @class = "navigationmenu" })
         </li>
         <li>
-            @Html.ActionLink("Common Questions", "Questions", "Home", new { @class = "navigationmenu" }) 
+            @Html.ActionLink("Common Questions", "Index", new { controller = "Questions" }, new { @class = "navigationmenu" })
         </li>
         <li>
             @Html.ActionLink("Sign Up", "SignUp", "Home", new { @class = "navigationmenu" })

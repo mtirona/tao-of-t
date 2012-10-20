@@ -5,15 +5,14 @@ namespace tao_of_t
 {
     public class BundleConfig
     {
-        // For more information on Bundling, visit http://go.microsoft.com/fwlink/?LinkId=254725
         public static void RegisterBundles(BundleCollection bundles)
         {
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
                         "~/Scripts/jquery-{version}.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryslideshow").Include(
-                        "~/Scripts/jquery.easing.1.3.js",    //slide viewer 
-                        "~/Scripts/jquery.eislideshow.js")); // slide viewer
+                        "~/Scripts/jquery.easing.1.3.js", 
+                        "~/Scripts/jquery.eislideshow.js")); 
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryui").Include(
                         "~/Scripts/jquery-ui-{version}.js"));
@@ -27,19 +26,12 @@ namespace tao_of_t
             bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
                         "~/Scripts/modernizr-*"));
 
-            // script for tao-of-t website
             bundles.Add(new ScriptBundle("~/bundles/taooft").Include(
                         "~/Scripts/taooft-*"));
 
-            // frontier calendar
-            bundles.Add(new ScriptBundle("~/bundles/frontierCalendar").Include(
-                        "~/Scripts/frontierCalendar/colorpicker.js",
-                        "~/Scripts/frontierCalendar/eye.js",
-                        "~/Scripts/frontierCalendar/jquery.qtip-1.0.0-rc3.min.js",
-                        "~/Scripts/frontierCalendar/jshashtable-2.1.js",
-                        "~/Scripts/frontierCalendar/layout.js",
-                        "~/Scripts/frontierCalendar/utils.js",
-                        "~/Scripts/frontierCalendar/z-jquery-frontier-cal-1.3.2.js"));
+            bundles.Add(new ScriptBundle("~/bundles/fullcalendar").Include(
+                        "~/Scripts/fullcalendar/fullcalendar.js",
+                        "~/Scripts/fullcalendar/gcal.js"));
 
             bundles.Add(new StyleBundle("~/Content/themes/base/css").Include(
                         "~/Content/themes/base/jquery.ui.core.css",
@@ -55,21 +47,15 @@ namespace tao_of_t
                         "~/Content/themes/base/jquery.ui.progressbar.css",
                         "~/Content/themes/base/jquery.ui.theme.css"));
 
-            // slideshow styles
             bundles.Add(new StyleBundle("~/Content/slideshow/css").Include(
                         "~/Content/slideshow/demo.css",
                         "~/Content/slideshow/noscript.css",
                         "~/Content/slideshow/reset.css",
                         "~/Content/slideshow/style.css"));
 
-            // frontier calendar styles
-            bundles.Add(new StyleBundle("~/Content/frontierCalendar/css").Include(
-                        "~/Content/frontierCalendar/jquery-frontier-cal-1.3.2.css",
-                        "~/Content/frontierCalendar/colorpicker.css",
-                        "~/Content/frontierCalendar/jquery-ui-1.8.1.custom.css"));
-
-
-
+            bundles.Add(new StyleBundle("~/Content/fullcalendar/css").Include(
+                        "~/Content/fullcalendar/fullcalendar.css",
+                        "~/Content/fullcalendar/fullcalendar.print.css"));
         }
     }
 }

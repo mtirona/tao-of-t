@@ -10,7 +10,7 @@ namespace tao_of_t.Controllers
     {
         public ActionResult Index()
         {
-            ViewBag.Message = "Modify this template to jump-start your ASP.NET MVC application.";
+            ViewBag.Message = "Home";
 
             return View();
         }
@@ -22,9 +22,9 @@ namespace tao_of_t.Controllers
             return View();
         }
 
-        public ActionResult Contact()
+        public ActionResult Services()
         {
-            ViewBag.Message = "Your contact page.";
+            ViewBag.Message = "Services Provided";
 
             return View();
         }
