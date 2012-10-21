@@ -10,14 +10,14 @@ namespace tao_of_t.Controllers
     {
         public ActionResult Index()
         {
-            ViewBag.Message = "Home";
+            ViewBag.Message = "Tao-of-T";
 
             return View();
         }
 
         public ActionResult About()
         {
-            ViewBag.Message = "Your app description page.";
+            ViewBag.Message = "All about me.";
 
             return View();
         }
@@ -28,5 +28,27 @@ namespace tao_of_t.Controllers
 
             return View();
         }
+
+        public ActionResult Questions()
+        {
+            ViewBag.Message = "Common Questions";
+
+            return View();
+        }
+
+        public ActionResult Appointment()
+        {
+            ViewBag.Message = "Appointment Request";
+
+            return View();
+        }
+
+        public ActionResult LinksResources()
+        {
+            ViewBag.Message = "Links and Resources";
+
+            return View();
+        }
+
     }
 }

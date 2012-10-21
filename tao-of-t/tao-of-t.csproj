@@ -167,12 +167,8 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>strings.resx</DependentUpon>
     </Compile>
-    <Compile Include="Controllers\AboutController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\AppointmentController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\QuestionsController.cs" />
-    <Compile Include="Controllers\ServicesController.cs" />
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -321,6 +317,8 @@
     <Content Include="Images\logo.png" />
     <Content Include="Images\page\clouds.jpeg" />
     <Content Include="Images\page\elephants.png" />
+    <Content Include="Images\page\livethedream.png" />
+    <Content Include="Images\page\shareyourlight.png" />
     <Content Include="Images\page\yourlifeatbest.png" />
     <Content Include="Images\slideshow\fog_london.png" />
     <Content Include="Images\slideshow\fog_london_thumb.png" />
@@ -390,7 +388,6 @@
     <Content Include="Views\Account\Register.cshtml" />
     <Content Include="Views\Account\ExternalLoginFailure.cshtml" />
     <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
@@ -403,11 +400,12 @@
     <Content Include="Views\Shared\Logo.cshtml" />
     <Content Include="Views\Shared\NavigationMenu.cshtml" />
     <Content Include="Views\Shared\AppointmentPartial.cshtml" />
-    <Content Include="Views\Appointment\Index.cshtml" />
+    <Content Include="Views\Home\Appointment.cshtml" />
     <Content Include="Views\Shared\FooterPartial.cshtml" />
-    <Content Include="Views\Services\Index.cshtml" />
-    <Content Include="Views\Questions\Index.cshtml" />
-    <Content Include="Views\About\Index.cshtml" />
+    <Content Include="Views\Home\Services.cshtml" />
+    <Content Include="Views\Home\Questions.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\LinksResources.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
