@@ -50,5 +50,11 @@ namespace tao_of_t.Controllers
             return View();
         }
 
+        public ActionResult Policy()
+        {
+            ViewBag.Message = "Privacy and Policy";
+
+            return View();
+        }
     }
 }

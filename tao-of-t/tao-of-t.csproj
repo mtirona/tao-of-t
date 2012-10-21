@@ -315,8 +315,10 @@
     <Content Include="Images\divider_vertical.png" />
     <Content Include="Images\left_gradient_column.png" />
     <Content Include="Images\logo.png" />
+    <Content Include="Images\page\book.png" />
     <Content Include="Images\page\clouds.jpeg" />
     <Content Include="Images\page\elephants.png" />
+    <Content Include="Images\page\flyhigh.png" />
     <Content Include="Images\page\livethedream.png" />
     <Content Include="Images\page\shareyourlight.png" />
     <Content Include="Images\page\yourlifeatbest.png" />
@@ -368,16 +370,6 @@
     <Content Include="Images\accent.png" />
     <Content Include="Images\bullet.png" />
     <Content Include="Images\heroAccent.png" />
-    <Content Include="Images\orderedList0.png" />
-    <Content Include="Images\orderedList1.png" />
-    <Content Include="Images\orderedList2.png" />
-    <Content Include="Images\orderedList3.png" />
-    <Content Include="Images\orderedList4.png" />
-    <Content Include="Images\orderedList5.png" />
-    <Content Include="Images\orderedList6.png" />
-    <Content Include="Images\orderedList7.png" />
-    <Content Include="Images\orderedList8.png" />
-    <Content Include="Images\orderedList9.png" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Account\_ChangePasswordPartial.cshtml" />
     <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
@@ -406,6 +398,7 @@
     <Content Include="Views\Home\Questions.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\LinksResources.cshtml" />
+    <Content Include="Views\Home\Policy.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
