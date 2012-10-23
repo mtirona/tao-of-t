@@ -15,11 +15,25 @@
         @Scripts.Render("~/bundles/less")
         @Scripts.Render("~/bundles/modernizr")
         @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/jqueryui")
         @Scripts.Render("~/bundles/taooft")
         @Scripts.Render("~/bundles/jqueryslideshow")
         @Scripts.Render("~/bundles/fullcalendar")
         
         @RenderSection("scripts", required: false)
+
+        <script>
+            $(document).ready(function () {
+                var h = $("#page-content").height();
+
+                var loc = window.location.href.toLocaleLowerCase();
+                if (loc.indexOf("appointment") >= 0 || loc.indexOf("services") >= 0 || loc.indexOf("about") >= 0 || loc.indexOf("linksresources") >= 0 || loc.indexOf("policy") >= 0 || loc.indexOf("questions") >= 0) {
+                    $("#left-bottom").addClass("left-bottom").height(h - 278);
+                } else {
+                    $("#left-bottom").addClass("left-bottom").height(h);
+                }
+            });
+        </script>
 
     </head>
     

@@ -29,7 +29,7 @@ body {
 	}
 }
 
-a {
+a{
 	.anchor-style;
 	link{
 		.anchor-link;
@@ -44,26 +44,39 @@ a {
 
 #left{
 	width: 28%;
-	height: 100%;
+	height: 90%;
 	float: left;
 	margin-top: @page-margin;
+	color:@text;
 
 	#left-top{
 		height: @height-slider;
-	}
-	
-	#left-bottom {
-		height: 25%;
-		margin-top: @divider-height;
-	}
-
-	section {
-		color:@text;
-		width: 100%;
-		height: 99%;
 		.horizontal-gradient;
 		.box-border-shadow;
+	}	
+}
+
+.left-bottom {
+	height: 100%;
+	margin-top: @divider-height;
+	.vertical-gradient;
+	.box-border-shadow;
+	overflow-y: auto;
+}
+
+#accordion{
+	padding: 10px;
+	h3{
+		color: #000;
 	}
+	p{
+		padding: 2px;
+		font-size: 1.2em !important;
+	}
+}
+
+#onmymind-img{
+	padding: 5px;
 }
 
 footer{
@@ -85,7 +98,7 @@ footer{
 			text-decoration: none;
 			link
 			{
-				font-weight: bold;
+				.anchor-link;
 			}
 			&:hover {
 				color: @nav-hover-text;
@@ -97,16 +110,15 @@ footer{
 	}
 }
 
-.navigationmenu {
-	font-size: 22px;
+#navigationmenu{
+	font-size: 24px;
 	font-color: @header-text;
 	text-decoration: none;
-}
 
-#navigationmenu{
 	ul{	
-		width: 90%;
-		margin:auto;		
+		width: 85%;
+		margin:auto;
+				
 		li { 
 			margin-top: 5px;
 			margin-bottom: 5px;								
@@ -129,17 +141,6 @@ footer{
 	margin-right: auto;
 }
 
-#appointment{
-	.vertical-gradient;
-	.box-border-shadow;
-	#content{
-		.section-content_15;	
-		#content-container{
-			padding: @padding-default;
-		}
-	}
-}
-
 #right{
 	width: 70%;
 	height: 100%;
@@ -150,24 +151,22 @@ footer{
 	section{
 		height:90%;
 	}
+}
 
-	#home{
-		#content{
-			.vertical-gradient;
-			.box-border-shadow;
-			.section-content
-		}
-		#content-container{
-			padding: @padding-default;
-		}
-	}
+#header-image{
+	.box-border-shadow;
+}
+
+#slideshow{
+	margin-bottom: 25px;
 }
 
 #page-content{
 	.vertical-gradient;
 	.box-border-shadow;
+	min-height: @base-min-height;
 	#content{
-		.section-content_15;	
+		.section-content-15;	
 		#content-container{
 			padding: @padding-default;
 		}
@@ -192,5 +191,3 @@ footer{
 		}
 	}
 }
-
-

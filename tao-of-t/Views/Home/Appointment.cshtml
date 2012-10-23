@@ -1,4 +1,6 @@
-﻿@{
+﻿@model tao_of_t.Viewmodel.HomeViewmodel
+
+@{
     ViewBag.Title = "Appointment";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
@@ -16,15 +18,21 @@
 </div>
 
 <script>
+
     $(document).ready(function () {
 
-        // page is now ready, initialize the calendar...
-
         $('#calendar').fullCalendar({
-            events: 'https://www.google.com/calendar/feeds/tmtirona%40gmail.com/public/basic',
-        dayClick: function() {
+            events: '@Model.GoogleCalendarUrl',
+            dayClick: function () {
                 alert('a day has been clicked!');
             }
         })
     });
+
+    $("#page-content").resize(function () {
+        alert("resize");
+        var h = $("#page-content").height();
+        $("#left-bottom").addClass("left-bottom").height(h - 278);
+    });
+
 </script>

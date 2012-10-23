@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Configuration;
+using tao_of_t.Viewmodel;
 
 namespace tao_of_t.Controllers
 {
@@ -39,9 +41,12 @@ namespace tao_of_t.Controllers
         public ActionResult Appointment()
         {
             ViewBag.Message = "Appointment Request";
+            HomeViewmodel viewModel = new HomeViewmodel();
+            viewModel.GoogleCalendarUrl = WebConfigurationManager.AppSettings["gCalendarUrl"].ToString();
 
-            return View();
+            return View(viewModel);
         }
+
 
         public ActionResult LinksResources()
         {

@@ -1,9 +1,9 @@
 
 .ei-slider{
 	position: relative;
-	width: 111.2%;
+	width: 115.6%;    /*change large image width here - mtirona*/
 	max-width: 1920px;
-	height: 400px;
+	height: 440px;
 	margin: 0 auto;
 }
 
@@ -38,7 +38,7 @@
 }
 .ei-title{
 	position: absolute;
-	right: 30%;
+	right: 20%;
 	margin-right: 5%;
 	top: 5%;
 }
@@ -46,22 +46,22 @@
 	text-align: right;
 }
 .ei-title h2{
-	font-size: 40px;
-	line-height: 50px;
+	font-size: 62px;
+	line-height: 62px;
 	font-family: 'Playfair Display', serif;
 	font-style: italic;
-	color: #FCB514;
+	color: #800000;
 }
 .ei-title h3{
 	font-size: 70px;
 	line-height: 70px;
 	font-family: 'Open Sans Condensed', sans-serif;
 	text-transform: uppercase;
-	color: #FFF;
+	color: #FCB514;
 }
 .ei-slider-thumbs{
 	height: 13px;
-    width: 90%;
+    width: 86.7%; /*mtirona - change thumbnail bar width here*/
     float: left;
 	margin: 0 auto;
 	position: relative;
