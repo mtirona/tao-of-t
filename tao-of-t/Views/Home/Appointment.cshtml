@@ -29,8 +29,7 @@
         })
     });
 
-    $("#page-content").resize(function () {
-        alert("resize");
+    $("#page-content").resize(function (e) {
         var h = $("#page-content").height();
         $("#left-bottom").addClass("left-bottom").height(h - 278);
     });

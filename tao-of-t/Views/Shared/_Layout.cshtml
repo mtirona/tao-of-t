@@ -19,6 +19,7 @@
         @Scripts.Render("~/bundles/taooft")
         @Scripts.Render("~/bundles/jqueryslideshow")
         @Scripts.Render("~/bundles/fullcalendar")
+        @Scripts.Render("~/bundles/jqueryresize")
         
         @RenderSection("scripts", required: false)
 
@@ -28,7 +29,7 @@
 
                 var loc = window.location.href.toLocaleLowerCase();
                 if (loc.indexOf("appointment") >= 0 || loc.indexOf("services") >= 0 || loc.indexOf("about") >= 0 || loc.indexOf("linksresources") >= 0 || loc.indexOf("policy") >= 0 || loc.indexOf("questions") >= 0) {
-                    $("#left-bottom").addClass("left-bottom").height(h - 278);
+                    $("#left-bottom").addClass("left-bottom").height(h - 275);
                 } else {
                     $("#left-bottom").addClass("left-bottom").height(h);
                 }
