@@ -10,6 +10,9 @@
 <script>
     $(document).ready(function () {
 
+        $('#accordion').accordion();
+
+        var allcontent;
         $.ajax({
             type: "GET",
             url: "http://www.tao-of-t.com/onmymind_data.xml",
@@ -20,10 +23,17 @@
                     var id = $(this).attr('id');
                     var header = $(this).find('header').text();
                     var content = $(this).find('content').text();
-                    $('<h3 id="' + id + '"' + '> ' + header + '</h3>').appendTo('#accordion');
-                    $('<div>' + content + '</div>').appendTo('#accordion');
+                    if (typeof allcontent == 'undefined') {
+                        allcontent = '<h3 id="' + id + '"' + '> ' + header + '</h3><div>' + content + '</div>';
+                    } else {
+                        allcontent = allcontent + '<h3 id="' + id + '"' + '> ' + header + '</h3><div>' + content + '</div>';
+                    }
                 });
+                if (typeof allcontent != 'undefined') {
+                    $('#accordion').append(allcontent).accordion('destroy').accordion();
+                }
             }
         });
+
     });
 </script>
