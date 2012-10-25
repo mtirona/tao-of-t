@@ -1,0 +1,127 @@
+﻿@model tao_of_t.Viewmodel.ScheduleViewmodel
+
+@{
+    ViewBag.Title = "Schedule";
+    Layout = "~/Views/Shared/_Layout.dialog.cshtml";
+}
+
+    <div>
+        <div id="page-content">
+            <section id="content">
+                <div id="content-container">
+                    <h3>Schedule an Appointment</h3>
+                    <p>To schedule an individual, children, couples, marriage or family therapy appointment or to obtain additional information about any of these counseling services, please fill out the form below.</p>
+                    <br />
+                    <div id="information">
+                        <table id="general-info">
+                            <tr>
+                                <td>Firstname: </td>
+                                <td><input id="first" type="text" maxlength="128"  required="required"/></td>
+                            </tr>
+                            <tr>
+                                <td>Lastname: </td>
+                                <td><input id="last" type="text" maxlength="128" required="required"/></td>
+                            </tr>
+                            <tr>
+                                <td>Phone: </td>
+                                <td><input id="phone" type="tel" maxlength="128" required="required"/></td>
+                            </tr>
+                            <tr>
+                                <td>Email: </td>
+                                <td><input id="email" type="email" maxlength="128"/></td>
+                            </tr>
+                            <tr>
+                                <td>Your concerns: </td>
+                                <td><textarea name="TextMessage" rows="5" cols="40"></textarea></td>
+                            </tr>
+                        </table>
+                    </div>
+                    <br />
+                    <table id="payinfo">
+                        <tr>
+                            <td>
+                                <h3 style="float:left;">Pay as you go:</h3>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <ul style="float:left">
+                                    <li>$65 USD per forty-five minute phone or video session.</li>
+                                    <li>$45 USD per thirty minute instant messaging chat session.</li>
+                                    <li>$25 USD for three comprehensive e-mail exchanges.</li>
+                                </ul>
+                            </td>
+                            <td>
+                            <form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+                                <input type="hidden" name="cmd" value="_s-xclick">
+                                <input type="hidden" name="hosted_button_id" value="WT4HPPXTS6774">
+                                <table>
+                                <tr><td><input type="hidden" name="on0" value="Options">Options</td></tr><tr><td><select name="os0">
+	                                <option value="45 min phone/video session">45 min phone/video session $65.00 USD</option>
+	                                <option value="30 min IM chat session">30 min IM chat session $45.00 USD</option>
+	                                <option value="3 emails">3 emails $25.00 USD</option>
+                                </select> </td></tr>
+                                </table>
+                                <br />
+                                <input type="hidden" name="currency_code" value="USD">
+                                <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+                                <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+                            </form>
+                            </td>
+                        </tr>
+                        <tr></tr>
+                        <tr>
+                            <td>
+                                <h3 style="float:left;">Pay by the month with automatic payments:</h3>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <ul style="float:left;">
+                                    <li>$200 USD per month for one forty-five minute phone or video session a week.</li>
+                                    <li>$160 USD per month for one thirty minute instant messaging chat session per week.</li>
+                                    <li>$130 USD per month for ten comprehensive e-mail exchnages.</li>
+                                </ul>
+                            </td>
+                            <td>
+                                <form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+                                    <input type="hidden" name="cmd" value="_s-xclick">
+                                    <input type="hidden" name="hosted_button_id" value="9JTHECSBALG3U">
+                                    <table>
+                                        <tr><td><input type="hidden" name="on0" value="Options">Options</td></tr><tr><td><select name="os0">
+	                                        <option value="45 min phone/video session each week">45 min phone/video session each week : $200.00 USD - monthly</option>
+	                                        <option value="30 min IM chat session per week">30 min IM chat session per week : $160.00 USD - monthly</option>
+	                                        <option value="10 email per month">10 email per month : $130.00 USD - monthly</option>
+                                        </select> </td></tr>
+                                    </table>
+                                    <br />
+                                    <input type="hidden" name="currency_code" value="USD">
+                                    <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_subscribeCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+                                    <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+                                </form>
+                            </td>
+                        </tr>
+                    </table>
+                    <div id="insurance">
+                        <h3>Insurance</h3>
+                        <p>
+                            Services may be covered in full or in part by your health insurance or employee benefit plan, however, Tao-of-T accepts PayPal or major credit cards only.   A reciept will be provided so you can request reimbursement from your insurance company.
+                        </p>
+                    </div>
+                    <br />
+                    <div id="cancelpolicy">
+                        <h3>Cancellation Policy</h3>
+                        <p>If you do not show up for your scheduled therapy appointment, and you have not notified us at least 24 hours in advance, you will be required to pay the full cost of the session.</p>
+                    </div>
+                    <br />
+                    <div id="contact">
+                        <h3>Contact</h3>
+                        <p>Questions? Please contact <a href="mailto:ttirona@tao-of-t.com">me</a> for further information.</p>
+                    </div>
+
+                </div>
+            </section>
+        </div>
+    </div>

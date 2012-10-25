@@ -1,0 +1,37 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.dialog.cshtml";
+}
+
+@using (Html.BeginForm("PostToPayPal", "PayPal", FormMethod.Post, new { id = "Form" }))
+{
+    <div class="Place">
+        <div class="PlaceName">(Theatre Name)</div>
+        <div class="PlaceName">Date: <%= Html.DropDownListFor(model => model.MovieDate,new SelectList(Model.MovieDate,Model.MovieDate.First())) %> </div>
+        <%= Html.HiddenFor(model => model.Price, new { id = "Price" })%>
+        <%= Html.HiddenFor(model => model.TheatreName, new { id = "TheatreName"}) %>
+ 
+        <table border="1" cellpadding="0" cellspacing="0" class="reference">
+            <tbody>
+                <tr>   
+                    <td>Time</td>   
+                    <td>Tickets</td>         
+                    <td>Price</td>         
+                    <td>Buy With PayPal</td>  
+                </tr>
+                <tr>   
+                    <td><%= Html.DropDownListFor(model => model.MovieTime, new SelectList(Model.MovieTime, "3:00 PM"))%></td>   
+                    <td><%= Html.DropDownListFor(model => model.NoOfTickets, new SelectList(Model.NoOfTickets, 1), new { id = "Tickets" })%></td>         
+                    <td id="sPrc">15$</td> 
+                    <td>
+                        <div class="PayPalButton">
+                            <input alt="PayPal - The safer, easier way to pay online!" border="0" name="submit" src="https://www.sandbox.paypal.com/en_US/i/btn/btn_buynowCC_LG.gif" type="image">
+                                <img alt="" border="0" height="1" src="https://www.sandbox.paypal.com/en_US/i/scr/pixel.gif" width="1">
+                        </div>
+                    </td> 
+                </tr>
+            </tbody> 
+        </table>
+    </div>
+}
+

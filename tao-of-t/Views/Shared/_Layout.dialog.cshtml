@@ -1,5 +1,4 @@
-﻿
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="utf-8" />
@@ -11,51 +10,20 @@
         <link href="~/Content/less/styles.less" rel="stylesheet/less" type="text/css" />
         <script src="~/Scripts/less-1.3.0.min.js" type="text/javascript"></script>
 
-        @Styles.Render("~/Content/slideshow/css")
-        @Styles.Render("~/Content/fullcalendar/css")
         @Scripts.Render("~/bundles/less")
-        @Scripts.Render("~/bundles/modernizr")
         @Scripts.Render("~/bundles/jquery")
         @Scripts.Render("~/bundles/jqueryui")
-        @Scripts.Render("~/bundles/taooft")
-        @Scripts.Render("~/bundles/jqueryslideshow")
-        @Scripts.Render("~/bundles/fullcalendar")
-        @Scripts.Render("~/bundles/jqueryresize")
         
         @RenderSection("scripts", required: false)
-
-        <script>
-            $(document).ready(function () {
-                var h = $("#page-content").height();
-
-                var loc = window.location.href.toLocaleLowerCase();
-                if (loc.indexOf("appointment") >= 0 || loc.indexOf("services") >= 0 || loc.indexOf("about") >= 0 || loc.indexOf("linksresources") >= 0 || loc.indexOf("policy") >= 0 || loc.indexOf("questions") >= 0) {
-                    $("#left-bottom").addClass("left-bottom").height(h - 275);
-                } else {
-                    $("#left-bottom").addClass("left-bottom").height(h);
-                }
-            });
-        </script>
 
     </head>
     
     <body style="margin:auto;">
-        <div id="left">
-            <section id="left-top">
-                @Html.Partial("Logo")
-                @Html.Partial("NavigationMenu")
-            </section>
-            <section id="left-bottom">
-                @Html.Partial("AppointmentPartial")
-            </section>
-        </div>
-        <div id="right">
+        <div>
             <section class="content-wrapper main-content clear-fix">
                 @RenderBody()
             </section>
         </div>
-
-        @Html.Partial("FooterPartial")
 
     </body>
 </html>
