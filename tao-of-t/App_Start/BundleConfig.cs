@@ -22,7 +22,8 @@ namespace tao_of_t
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
                         "~/Scripts/jquery.unobtrusive*",
-                        "~/Scripts/jquery.validate*"));
+                        "~/Scripts/jquery.validate*",
+                        "~/Scripts/jquery.simplemodal.js"));
 
             // Use the development version of Modernizr to develop with and learn from. Then, when you're
             // ready for production, use the build tool at http://modernizr.com to pick only the tests you need.
@@ -35,6 +36,9 @@ namespace tao_of_t
             bundles.Add(new ScriptBundle("~/bundles/fullcalendar").Include(
                         "~/Scripts/fullcalendar/fullcalendar.js",
                         "~/Scripts/fullcalendar/gcal.js"));
+
+            bundles.Add(new StyleBundle("~/Content/dialog/css").Include(
+                "~/Content/dialog/basic.css"));
 
             bundles.Add(new StyleBundle("~/Content/themes/base/css").Include(
                         "~/Content/themes/base/jquery.ui.core.css",

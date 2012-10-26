@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using tao_of_t.Models;
 
 namespace tao_of_t.Controllers
 {
@@ -11,9 +12,44 @@ namespace tao_of_t.Controllers
         //
         // GET: /Schedule/
 
+        [HttpGet]
         public ActionResult Index()
         {
+            if (Request.IsAjaxRequest())
+            {
+                return PartialView("_Schedule");
+            }
+
             return View();
+        }
+
+        [HttpPost]
+        public ActionResult Index(ScheduleModels model)
+        {
+            // Validate the model being submitted
+            if (!ModelState.IsValid)
+            {
+                // If the incoming request is an Ajax Request 
+                // then we just return a partial view (snippet) of HTML 
+                // instead of the full page
+                if (Request.IsAjaxRequest())
+                    return PartialView("_Schedule", model);
+
+                return View(model);
+            }
+
+            // TODO: A real app would send some sort of email here
+
+            if (Request.IsAjaxRequest())
+            {
+                // Same idea as above
+                return PartialView("_ThanksForFeedback", model);
+            }
+
+            // A standard (non-Ajax) HTTP Post came in
+            // set TempData and redirect the user back to the Home page
+            TempData["Message"] = string.Format("Thanks for the feedback, {0}! We will contact you shortly.", model.Firstname + " " + model.Lastname);
+            return RedirectToAction("Index");
         }
 
         //
@@ -102,5 +138,5 @@ namespace tao_of_t.Controllers
             }
         }
     }
-}
+} 
 

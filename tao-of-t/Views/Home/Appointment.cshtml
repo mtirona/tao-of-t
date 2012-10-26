@@ -14,17 +14,39 @@
         <div id="content-container">            
             <div id="calendar"></div>
         </div>
+
+        <div id='basic-modal-container'>
+		    <!-- modal content -->
+		    <div id="basic-modal-content">
+			    <h3>Error</h3>
+			    <p>Please, select a date in the future.</p>
+		    </div>
+        </div>
+		<!-- preload the images -->
+		<div style="display:none;">
+			<img src='../../images/x.png' alt='Close' />
+		</div>
     </section>
 </div>
+
 
 <script>
 
     $(document).ready(function () {
+        var now = new Date();
 
         $('#calendar').fullCalendar({
             events: '@Model.GoogleCalendarUrl',
-            dayClick: function () {
-                alert('a day has been clicked!');
+            defaultView: 'basicWeek',
+
+            dayClick: function(date, allDay, jsEvent, view) {
+          
+                if (Date.parse(date) < Date.parse(now)) {
+                    $('#basic-modal-content').modal();
+                    return;
+                } else {
+                    window.location.replace("http://tao-of-t.com/schedule/");
+                }
             }
         })
     });

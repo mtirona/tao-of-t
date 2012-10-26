@@ -175,12 +175,14 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountModels.cs" />
+    <Compile Include="Models\ScheduleModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Viewmodel\HomeViewmodel.cs" />
     <Compile Include="Viewmodel\PayPalViewmodel.cs" />
     <Compile Include="Viewmodel\ScheduleViewmodel.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\dialog\basic.css" />
     <Content Include="Content\fullcalendar\fullcalendar.css" />
     <Content Include="Content\fullcalendar\fullcalendar.print.css" />
     <Content Include="Content\less\colors.less" />
@@ -347,6 +349,7 @@
     <Content Include="Images\slideshow\walking_the_dog_thumb.png" />
     <Content Include="Images\slideshow\water_fall.png" />
     <Content Include="Images\slideshow\water_fall_thumb.png" />
+    <Content Include="Images\x.png" />
     <Content Include="onmymind_data.xml">
       <SubType>Designer</SubType>
     </Content>
@@ -366,6 +369,7 @@
     <Content Include="Scripts\jquery.eislideshow.js" />
     <Content Include="Scripts\jquery.mobile-1.1.1.js" />
     <Content Include="Scripts\jquery.mobile-1.1.1.min.js" />
+    <Content Include="Scripts\jquery.simplemodal.js" />
     <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
     <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
     <Content Include="Scripts\jquery.validate.js" />
@@ -413,6 +417,7 @@
     <Content Include="Views\Schedule\Index.cshtml" />
     <Content Include="Views\Shared\_Layout.dialog.cshtml" />
     <Content Include="Views\PayPal\Index.cshtml" />
+    <Content Include="Views\Schedule\_Schedule.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
