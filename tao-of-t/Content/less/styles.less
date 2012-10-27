@@ -6,7 +6,7 @@
 body {
 	margin-bottom: 0px;
 	font-family: Verdana;
-	font-size: 10px;
+	font-size: 10px; 
 	font-style: normal;
 	line-height: normal;
 	font-weight: normal;
@@ -18,28 +18,15 @@ body {
 	height: 100%;
 
 	h2{
-		font-size: @base-h2-size;
+		font-size: @base-h2-size; 
 		font-weight: bold;
 	}
 
 	h3{
-		font-size: @base-h3-size;
+		font-size: @base-h3-size; 
 		font-style: italic;
 		font-weight:bold;
 	}
-}
-
-a{
-	.anchor-style;
-	link{
-		.anchor-link;
-	}
-	&:hover {
-		.anchor-hoover;
-	}
-	&:visited {
-		.anchor-visited;
-	}    
 }
 
 #left{
@@ -64,16 +51,22 @@ a{
 	overflow-y: auto;
 }
 
+.accordion-h3{
+	font-size: 18px;
+	font-weight: bold;
+}
+
+.accordion-p{
+	font-size: 1.2em !important;
+	padding: 10px;
+	background: rgb(255, 255, 255) transparent; /* default fallback */
+	background: rgba(255, 255, 255, 0.8); /* nice browsers */ 
+}
+
 #accordion{
 	padding: 10px;
-	h3{
-		color: #000;
-	}
-	p{
-		padding: 2px;
-		font-size: 1.2em !important;
-	}
 }
+
 
 #onmymind-img{
 	padding: 5px;
@@ -92,12 +85,11 @@ footer{
 		padding: 2%;
 		width: 100%;
 		height: @base-menu-height;
+		font-size: 14px; 
 		a {
 			color: @nav-text;
-			font-size: 12pt;
 			text-decoration: none;
-			link
-			{
+			link{
 				.anchor-link;
 			}
 			&:hover {
@@ -111,9 +103,22 @@ footer{
 }
 
 #navigationmenu{
-	font-size: 24px;
+	font-size: 22px;
 	font-color: @header-text;
 	text-decoration: none;
+
+	a{
+		.anchor-style;
+		link{
+			.anchor-link;
+		}
+		&:hover {
+			.anchor-hoover;
+		}
+		&:visited {
+			.anchor-visited;
+		}
+	}    
 
 	ul{	
 		width: 85%;
@@ -140,7 +145,7 @@ footer{
 	margin-left: auto;
 	margin-right: auto;
 }
-
+ 
 #right{
 	width: 70%;
 	height: 100%;
@@ -165,6 +170,7 @@ footer{
 	.vertical-gradient;
 	.box-border-shadow;
 	min-height: @base-min-height;
+	font-size: @base-paragraph-size;
 	#content{
 		.section-content-15;	
 		#content-container{
@@ -174,9 +180,8 @@ footer{
 			padding: @padding-default;
 			list-style-type: circle;
 			li{
-				font-size: @base-paragraph-size;
 				a {
-					.anchor-style;
+					.anchor-style-10;
 					link{
 						.anchor-link;
 					}
@@ -189,12 +194,19 @@ footer{
 				}
 			}
 		}
-	}
+	} 
 }
 
-#general-info{
-	table{
-		
+	a.send-button{
+		background: url(../../Images/send.png) no-repeat top left;
+		display: block;
+		width: 81px;
+		height: 50px;
+		text-indent: -9999px; /* hides the link text */
+
+		&:hover {
+			background: url(../../Images/send_mouseover.png) no-repeat top left;
+		}
 	}
-}
+
 }

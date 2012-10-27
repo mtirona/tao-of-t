@@ -10,7 +10,9 @@
 <script>
     $(document).ready(function () {
 
-        $('#accordion').accordion();
+        $('#accordion').accordion({
+            icons: false
+        });
 
         var allcontent;
         $.ajax({
@@ -24,16 +26,17 @@
                     var header = $(this).find('header').text();
                     var content = $(this).find('content').text();
                     if (typeof allcontent == 'undefined') {
-                        allcontent = '<h3 id="' + id + '"' + '> ' + header + '</h3><div>' + content + '</div>';
+                        allcontent = '<h3 id="' + id + '" class="accordion-h3"' + '>' + header + '</h3><div class="accordion-p">' + content + '</div>';
                     } else {
-                        allcontent = allcontent + '<h3 id="' + id + '"' + '> ' + header + '</h3><div>' + content + '</div>';
+                        allcontent = allcontent + '<h3 id="' + id + '" class="accordion-h3"' + '> ' + header + '</b></h3><div class="accordion-p">' + content + '</div>';
                     }
                 });
                 if (typeof allcontent != 'undefined') {
-                    $('#accordion').append(allcontent).accordion('destroy').accordion();
+                    $('#accordion').append(allcontent).accordion('destroy').accordion({ icons: false });
                 }
             }
         });
 
+        $("#accordion").removeClass('.ui-icon');
     });
 </script>

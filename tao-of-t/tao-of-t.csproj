@@ -169,7 +169,6 @@
     </Compile>
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PayPalController.cs" />
-    <Compile Include="Controllers\ScheduleController.cs" />
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -333,8 +332,11 @@
     <Content Include="Images\page\flyhigh.png" />
     <Content Include="Images\page\livethedream.png" />
     <Content Include="Images\page\onmymind.png" />
+    <Content Include="Images\page\roses.png" />
     <Content Include="Images\page\shareyourlight.png" />
     <Content Include="Images\page\yourlifeatbest.png" />
+    <Content Include="Images\send.png" />
+    <Content Include="Images\send_mouseover.png" />
     <Content Include="Images\slideshow\fog_london.png" />
     <Content Include="Images\slideshow\fog_london_thumb.png" />
     <Content Include="Images\slideshow\love.png" />
@@ -361,6 +363,7 @@
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.8.2.js" />
     <Content Include="Scripts\jquery-1.8.2.min.js" />
+    <Content Include="Scripts\jquery-datepair.js" />
     <Content Include="Scripts\jquery-resize.js" />
     <Content Include="Scripts\jquery-resize.min.js" />
     <Content Include="Scripts\jquery-ui-1.9.0.js" />
@@ -370,6 +373,7 @@
     <Content Include="Scripts\jquery.mobile-1.1.1.js" />
     <Content Include="Scripts\jquery.mobile-1.1.1.min.js" />
     <Content Include="Scripts\jquery.simplemodal.js" />
+    <Content Include="Scripts\jquery.ui.timepicker.js" />
     <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
     <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
     <Content Include="Scripts\jquery.validate.js" />
@@ -414,13 +418,13 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\LinksResources.cshtml" />
     <Content Include="Views\Home\Policy.cshtml" />
-    <Content Include="Views\Schedule\Index.cshtml" />
+    <Content Include="Views\Home\Schedule.cshtml" />
     <Content Include="Views\Shared\_Layout.dialog.cshtml" />
     <Content Include="Views\PayPal\Index.cshtml" />
-    <Content Include="Views\Schedule\_Schedule.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Schedule\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
