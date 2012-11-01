@@ -7,7 +7,7 @@
  
 
 <div id="header-image">
-    <img src="../../Images/page/roses.png" alt="Smell the roses of the world." />
+    <img src="~/images/page/roses.png" alt="Smell the roses of the world." />
 </div>
 
 <div id="schedule-dialog">
@@ -19,58 +19,55 @@
                 <br />
 
                 <div id="information">
-                    
-@Html.ValidationSummary("Create was unsuccessful. Please correct the errors and try again.") 
 
-@using (Html.BeginForm()) {
-     <fieldset>
-         <legend>Fields</legend>
-        <p>
-            <label for="Name">Name:</label>
-            @Html.TextBox("Name") 
-            @Html.ValidationMessage("Name", "*") 
-        </p>    </fieldset>
-}
-                    <table id="general-info">
-                        <tr>
-                            <td style="font-style:italic;">Date & Time: </td>
-			                <td>    
-                                <input type="text" id="datepicker" />
-			                    <input type="text" id="timepicker" />
-                            </td>
-                        </tr>
-                        
-                        <tr>
-                            <td style="font-style:italic;">Firstname: </td>
-                            <td>
-                                <input id="first" type="text" maxlength="128" style="width:98%;" required="required"/>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td style="font-style:italic;">Lastname: </td>
-                            <td><input id="last" type="text" maxlength="128" style="width:98%;" required="required"/></td>
-                        </tr>
-                        <tr>
-                            <td style="font-style:italic;">Phone: </td>
-                            <td><input id="phone" type="tel" maxlength="128" style="width:98%;" required="required"/></td>
-                        </tr>
-                        <tr>
-                            <td style="font-style:italic;">Email: </td>
-                            <td><input id="email" type="email" maxlength="128" style="width:98%;" required="required"/></td>
-                        </tr>
-                        <tr>
-                            <td style="font-style:italic; vertical-align:middle;">Your concerns:</td>
-                            <td><textarea name="TextMessage" rows="7" cols="70"></textarea></td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td>
-                                <div id="send" style="float:right;">
-                                    @Html.ActionLink("Send", "Send", "Home", new { @class="send-button" }) 
-                                </div>
-                            </td>
-                        </tr>
-                    </table>
+                    <div class="error">                    
+                        @Html.ValidationSummary(true, "Send email was unsuccessful. Please correct the errors and try again.") 
+                    </div>
+
+                    @using (Html.BeginForm("Schedule", "Home")) {
+                            <table>
+                                <tr>
+                                    <td style="width: 50%;"><label style="font-style:italic" for="DateAndTime">Date:</label></td>
+                                    <td style="width: 50%;">@Html.TextBoxFor(m => Model.ScheduleDate, new { id = "datepicker" })</td>
+                                </tr>
+                                <tr>
+                                    <td><label style="font-style:italic" for="DateAndTime">Time:</label></td>
+                                    <td>@Html.TextBoxFor(m => Model.ScheduleTime, new { id = "timepicker" })</td>
+                                </tr>
+                                <tr>
+                                    <td><label style="font-style:italic" for="Firstname">Firstname:</label></td>
+                                    <td>@Html.TextBoxFor(m => Model.Firstname) 
+                                        @Html.ValidationMessage("Firstname", "*") 
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><label style="font-style:italic" for="Lastname">Lastname:</label></td>
+                                    <td>@Html.TextBoxFor(m => Model.Lastname) 
+                                        @Html.ValidationMessage("Lastname", "*") 
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><label style="font-style:italic" for="Phone">Phone:</label></td>
+                                    <td>@Html.TextBoxFor(m => Model.Phone) 
+                                        @Html.ValidationMessage("Phone", "*") 
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><label style="font-style:italic" for="Email">Email:</label></td>
+                                    <td>@Html.TextBoxFor(m => Model.Email) 
+                                        @Html.ValidationMessage("Email", "*") 
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><label style="font-style:italic" for="YourConcerns">Your Concerns:</label></td>
+                                    <td>
+                                        @Html.TextAreaFor(m => Model.Concerns, new { @class = "textarea", @cols = 80, @rows = 10 }) 
+                                    </td>
+                                </tr>
+                            </table>   
+
+                            <input type="image" name="Schedule" id="Schedule" src="~/images/send.png" alt="Submit">
+                    }
                 </div>
                 <br />
                 <table id="payinfo">
@@ -103,12 +100,12 @@
                             </table>
                             <br />
                             <input type="hidden" name="currency_code" value="USD">
-                            <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif" name="submit" alt="PayPal - The safer, easier way to pay online!">
+                            <input type="image" style="border: 0px;" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif" name="submit" alt="PayPal - The safer, easier way to pay online!">
                             <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
                         </form>
                         </td>
                     </tr>
-                    <tr></tr>
+                    <tr><td><br /></td></tr>
                     <tr>
                         <td>
                             <h3 style="float:left;">Pay by the month with automatic payments:</h3>
@@ -138,7 +135,7 @@
                                 </table>
                                 <br />
                                 <input type="hidden" name="currency_code" value="USD">
-                                <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_subscribeCC_LG.gif" name="submit" alt="PayPal - The safer, easier way to pay online!">
+                                <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_subscribeCC_LG.gif" style="border: 0px;" name="submit" alt="PayPal - The safer, easier way to pay online!">
                                 <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
                             </form>
                         </td>

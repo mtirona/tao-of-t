@@ -6,6 +6,8 @@ using System.Web.Mvc;
 using System.Web.Configuration;
 using tao_of_t.Viewmodel;
 using System.Text.RegularExpressions;
+using System.Net.Mail;
+using System.Net;
 
 namespace tao_of_t.Controllers
 {
@@ -22,21 +24,21 @@ namespace tao_of_t.Controllers
         {
             ViewBag.Message = "All about me.";
 
-            return View();
+            return View("About");
         }
 
         public ActionResult Services()
         {
             ViewBag.Message = "Services Provided";
 
-            return View();
+            return View("Services");
         }
 
         public ActionResult Questions()
         {
             ViewBag.Message = "Common Questions";
 
-            return View();
+            return View("Questions");
         }
 
         public ActionResult Appointment()
@@ -53,56 +55,83 @@ namespace tao_of_t.Controllers
         {
             ViewBag.Message = "Links and Resources";
 
-            return View();
+            return View("LinksResources");
         }
 
         public ActionResult Policy()
         {
             ViewBag.Message = "Privacy and Policy";
 
-            return View();
+            return View("Policy");
         }
 
         public ActionResult Schedule()
         {
             ViewBag.Message = "Schedule";
+            ScheduleViewmodel viewmodel = new ScheduleViewmodel();
 
-            return View();
+            return View("Schedule", viewmodel);
         }
 
-        public ActionResult Send(ScheduleViewmodel viewmodel)
+        public ActionResult ThankYou()
         {
-            ViewBag.Message = "Send";
-
-            return View("Index");
+            ViewBag.Message = "Thank You";
+            return View("ThankYou");
         }
-
-        [AcceptVerbs(HttpVerbs.Post)]
-        public ActionResult Create(ScheduleViewmodel person)
+        
+        [HttpPost]
+        public ActionResult Schedule(ScheduleViewmodel person)
         {
-            if (person.Firstname.Trim().Length == 0)
+            Regex ShortDate = new Regex(@"^\d{6}$");
+
+            if (person.Firstname == null || person.Firstname.Trim().Length == 0)
             {
                 ModelState.AddModelError("Firstname", "Firstname is required.");
             }
-            if (person.Lastname.Trim().Length == 0)
+            if (person.Lastname == null || person.Lastname.Trim().Length == 0)
             {
                 ModelState.AddModelError("Lastname", "Lastname is required.");
             }
-            if (!Regex.IsMatch(person.Phone, @"((\(\d{3}\) ?)|(\d{3}-))?\d{3}-\d{4}"))
+            if (person.Phone == null || !Regex.IsMatch(person.Phone, @"^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$"))
             {
                 ModelState.AddModelError("Phone", "Phone number is invalid.");
             }
-            if (!Regex.IsMatch(person.Email, @"^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$"))
+            if (person.Email == null || !Regex.IsMatch(person.Email, @"^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$"))
             {
                 ModelState.AddModelError("Email", "Email format is invalid.");
             }
-            if (!ModelState.IsValid)
+            if (ModelState.IsValid)
             {
-                Send(person);
-                return View("Schedule");
+                SendEmail(person);
+                return RedirectToAction("ThankYou");
             }
+            else
+            {
+                return View();
+            }
+        }
 
-            return RedirectToAction("Index");
+        public void SendEmail(ScheduleViewmodel person)
+        {
+             if (ModelState.IsValid)
+             {
+                 try
+                 {
+                     MailMessage message = new MailMessage();
+                     message.From = new MailAddress(person.Email, person.Firstname + " " + person.Lastname);
+                     message.To.Add(new MailAddress(WebConfigurationManager.AppSettings["sendToEmailAddress"].ToString(), "T Tirona"));
+                     message.Subject = WebConfigurationManager.AppSettings["emailSubject"].ToString() + person.ScheduleDate + " at " + person.ScheduleTime;
+                     message.Body = person.Concerns;
+                     SmtpClient client = new SmtpClient(WebConfigurationManager.AppSettings["emailServer"].ToString(), Convert.ToInt32(WebConfigurationManager.AppSettings["emailPort"].ToString()));
+                     client.Credentials = new System.Net.NetworkCredential(WebConfigurationManager.AppSettings["username"].ToString(), WebConfigurationManager.AppSettings["password"].ToString());
+                     client.EnableSsl = true;
+                     client.Send(message);
+                 }
+                 catch (Exception e)
+                 {
+                     ModelState.AddModelError("", "There was an issue with sending your email" + e.Message);
+                 }
+             }
         }
     }
 }

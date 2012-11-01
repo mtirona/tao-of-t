@@ -400,17 +400,16 @@
     <Content Include="Images\heroAccent.png" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
-    <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Web.config">
       <SubType>Designer</SubType>
     </Content>
     <Content Include="Views\Shared\_Layout.mobile.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Shared\SlideShow.cshtml" />
+    <Content Include="Views\Shared\_SlideShowPartial.cshtml" />
     <Content Include="Views\Shared\Logo.cshtml" />
     <Content Include="Views\Shared\NavigationMenu.cshtml" />
-    <Content Include="Views\Shared\AppointmentPartial.cshtml" />
+    <Content Include="Views\Shared\_OnMyMindPartial.cshtml" />
     <Content Include="Views\Home\Appointment.cshtml" />
     <Content Include="Views\Shared\FooterPartial.cshtml" />
     <Content Include="Views\Home\Services.cshtml" />
@@ -421,6 +420,7 @@
     <Content Include="Views\Home\Schedule.cshtml" />
     <Content Include="Views\Shared\_Layout.dialog.cshtml" />
     <Content Include="Views\PayPal\Index.cshtml" />
+    <Content Include="Views\Home\ThankYou.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
