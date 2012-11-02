@@ -65,18 +65,19 @@ namespace tao_of_t.Controllers
             return View("Policy");
         }
 
+        public ActionResult ThankYou()
+        {
+            ViewBag.Message = "Thank You";
+            return View();
+        }
+
+        [HttpGet]
         public ActionResult Schedule()
         {
             ViewBag.Message = "Schedule";
             ScheduleViewmodel viewmodel = new ScheduleViewmodel();
 
-            return View("Schedule", viewmodel);
-        }
-
-        public ActionResult ThankYou()
-        {
-            ViewBag.Message = "Thank You";
-            return View("ThankYou");
+            return View(viewmodel);
         }
         
         [HttpPost]
@@ -107,20 +108,20 @@ namespace tao_of_t.Controllers
             }
             else
             {
-                return View();
+                return View(person);
             }
         }
 
         public void SendEmail(ScheduleViewmodel person)
         {
-             if (ModelState.IsValid)
-             {
+            if (ModelState.IsValid)
+            {
                  try
                  {
                      MailMessage message = new MailMessage();
                      message.From = new MailAddress(person.Email, person.Firstname + " " + person.Lastname);
                      message.To.Add(new MailAddress(WebConfigurationManager.AppSettings["sendToEmailAddress"].ToString(), "T Tirona"));
-                     message.Subject = WebConfigurationManager.AppSettings["emailSubject"].ToString() + person.ScheduleDate + " at " + person.ScheduleTime;
+                     message.Subject = WebConfigurationManager.AppSettings["emailSubject"].ToString() + person.ScheduleTimeDate.ToShortDateString() + " at " + person.ScheduleTimeDate.ToShortTimeString();
                      message.Body = person.Concerns;
                      SmtpClient client = new SmtpClient(WebConfigurationManager.AppSettings["emailServer"].ToString(), Convert.ToInt32(WebConfigurationManager.AppSettings["emailPort"].ToString()));
                      client.Credentials = new System.Net.NetworkCredential(WebConfigurationManager.AppSettings["username"].ToString(), WebConfigurationManager.AppSettings["password"].ToString());
@@ -131,7 +132,7 @@ namespace tao_of_t.Controllers
                  {
                      ModelState.AddModelError("", "There was an issue with sending your email" + e.Message);
                  }
-             }
+            }
         }
     }
 }

@@ -169,7 +169,6 @@
     </Compile>
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PayPalController.cs" />
-    <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -202,6 +201,7 @@
     <Content Include="Content\jquery.mobile.theme-1.1.1.min.css" />
     <None Include="Content\less\styles.less" />
     <None Include="Content\less\mixins.less" />
+    <Content Include="Content\mobiscroll-2.1.custom.min.css" />
     <Content Include="Content\slideshow\noscript.css" />
     <Content Include="Content\slideshow\reset.css" />
     <Content Include="Content\slideshow\style.css" />
@@ -383,6 +383,7 @@
     <Content Include="Scripts\knockout-2.1.0.debug.js" />
     <Content Include="Scripts\knockout-2.1.0.js" />
     <Content Include="Scripts\less-1.3.0.min.js" />
+    <Content Include="Scripts\mobiscroll-2.1.custom.min.js" />
     <Content Include="Scripts\modernizr-2.5.3.js" />
     <Content Include="Scripts\taooft-preload.js" />
     <Content Include="Web.config">
@@ -418,12 +419,12 @@
     <Content Include="Views\Home\LinksResources.cshtml" />
     <Content Include="Views\Home\Policy.cshtml" />
     <Content Include="Views\Home\Schedule.cshtml" />
-    <Content Include="Views\Shared\_Layout.dialog.cshtml" />
     <Content Include="Views\PayPal\Index.cshtml" />
     <Content Include="Views\Home\ThankYou.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Filters\" />
     <Folder Include="Views\Schedule\" />
   </ItemGroup>
   <ItemGroup>

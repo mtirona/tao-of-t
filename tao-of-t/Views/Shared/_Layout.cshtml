@@ -12,20 +12,17 @@
         <script src="~/Scripts/less-1.3.0.min.js" type="text/javascript"></script>
 
         @Styles.Render("~/Content/slideshow/css")
-<!--        @Styles.Render("~/Content/fullcalendar/css") -->
-<!--        @Styles.Render("~/Content/dialog/css") -->
-        @Styles.Render("~/Content/themes/base/css")
         @Scripts.Render("~/bundles/less")
         @Scripts.Render("~/bundles/modernizr")
         @Scripts.Render("~/bundles/jquery")
         @Scripts.Render("~/bundles/jqueryui")
         @Scripts.Render("~/bundles/jqueryval")
-        @Scripts.Render("~/bundles/taooft")
         @Scripts.Render("~/bundles/jqueryslideshow")
-        @Scripts.Render("~/bundles/fullcalendar")
         @Scripts.Render("~/bundles/jqueryresize")
         
         @RenderSection("scripts", required: false)
+        <link href="~/Content/mobiscroll-2.1.custom.min.css" rel="stylesheet" type="text/css" />
+        <script src="~/Scripts/mobiscroll-2.1.custom.min.js" type="text/javascript"></script>
 
         <script>
             $(document).ready(function () {

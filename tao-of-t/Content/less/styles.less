@@ -171,6 +171,19 @@ footer{
 	.box-border-shadow;
 	min-height: @base-min-height;
 	font-size: @base-paragraph-size;
+	a {
+		.anchor-style;
+		link{
+			.anchor-link;
+		}
+		&:hover {
+			.anchor-hoover;
+		}
+		&:visited {
+			.anchor-visited;
+		}    
+	}
+	
 	#content{
 		.section-content-15;	
 		#content-container{
@@ -197,18 +210,7 @@ footer{
 	} 
 }
 
-	a.send-button{
-		background: url(../../Images/send.png) no-repeat top left;
-		display: block;
-		width: 81px;
-		height: 50px;
-		text-indent: -9999px; /* hides the link text */
-
-		&:hover {
-			background: url(../../Images/send_mouseover.png) no-repeat top left;
-		}
-	}
-
+	.font-18 { font-size: 18px !important; }
 	.error{ color: red; }
 
 	.textarea{

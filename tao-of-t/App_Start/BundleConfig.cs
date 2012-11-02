@@ -15,8 +15,7 @@ namespace tao_of_t
                         "~/Scripts/jquery.eislideshow.js")); 
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryui").Include(
-                        "~/Scripts/jquery-ui-{version}.js",
-                        "~/Scripts/jquery.ui.timepicker.js"));
+                        "~/Scripts/jquery-ui-{version}.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryresize").Include(
                         "~/Scripts/jquery-resize.js"));
@@ -33,29 +32,18 @@ namespace tao_of_t
             bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
                         "~/Scripts/modernizr-*"));
 
-            bundles.Add(new ScriptBundle("~/bundles/taooft").Include(
-                        "~/Scripts/taooft-*"));
 
-            bundles.Add(new ScriptBundle("~/bundles/fullcalendar").Include(
-                        "~/Scripts/fullcalendar/fullcalendar.js",
-                        "~/Scripts/fullcalendar/gcal.js"));
+ //           bundles.Add(new ScriptBundle("~/bundles/fullcalendar").Include(
+ //                       "~/Scripts/fullcalendar/fullcalendar.js",
+ //                       "~/Scripts/fullcalendar/gcal.js"));
 
-            bundles.Add(new StyleBundle("~/Content/dialog/css").Include(
-                "~/Content/dialog/basic.css"));
+ //           bundles.Add(new StyleBundle("~/Content/dialog/css").Include(
+ //               "~/Content/dialog/basic.css"));
 
-            bundles.Add(new StyleBundle("~/Content/themes/base/css").Include(
-                        "~/Content/themes/base/jquery.ui.core.css",
-//                        "~/Content/themes/base/jquery.ui.resizable.css",
-//                        "~/Content/themes/base/jquery.ui.selectable.css",
-//                        "~/Content/themes/base/jquery.ui.accordion.css",
-//                        "~/Content/themes/base/jquery.ui.autocomplete.css",
-//                        "~/Content/themes/base/jquery.ui.button.css",
-//                        "~/Content/themes/base/jquery.ui.dialog.css",
-//                        "~/Content/themes/base/jquery.ui.slider.css",
-//                        "~/Content/themes/base/jquery.ui.tabs.css",
-                        "~/Content/themes/base/jquery.ui.datepicker.css",
-//                        "~/Content/themes/base/jquery.ui.progressbar.css",
-                        "~/Content/themes/base/jquery.ui.theme.css"));
+ //           bundles.Add(new StyleBundle("~/Content/themes/base/css").Include(
+ //                       "~/Content/themes/base/jquery.ui.core.css",
+//                        "~/Content/themes/base/jquery.ui.datepicker.css",
+//                        "~/Content/themes/base/jquery.ui.theme.css"));
 
             bundles.Add(new StyleBundle("~/Content/slideshow/css").Include(
                         "~/Content/slideshow/demo.css",
@@ -63,9 +51,12 @@ namespace tao_of_t
                         "~/Content/slideshow/reset.css",
                         "~/Content/slideshow/style.css"));
 
-            bundles.Add(new StyleBundle("~/Content/fullcalendar/css").Include(
-                        "~/Content/fullcalendar/fullcalendar.css",
-                        "~/Content/fullcalendar/fullcalendar.print.css"));
+//            bundles.Add(new StyleBundle("~/Content/fullcalendar/css").Include(
+//                        "~/Content/fullcalendar/fullcalendar.css",
+//                        "~/Content/fullcalendar/fullcalendar.print.css"));
+
+            bundles.Add(new StyleBundle("~/Content/css").Include(
+                        "~/Content/mobiscroll-2.1.custom.min.css"));
         }
     }
 }
