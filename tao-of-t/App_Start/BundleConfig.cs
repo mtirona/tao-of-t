@@ -31,29 +31,20 @@ namespace tao_of_t
             // ready for production, use the build tool at http://modernizr.com to pick only the tests you need.
             bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
                         "~/Scripts/modernizr-*"));
+ 
+            bundles.Add(new StyleBundle("~/Content/less/converted_css").Include(
+                "~/Content/less/colors.css",
+                "~/Content/less/init.css",
+                "~/Content/less/mixins.css",
+                "~/Content/less/styles.css",
+                "~/Content/less/variables.css"));
 
-
- //           bundles.Add(new ScriptBundle("~/bundles/fullcalendar").Include(
- //                       "~/Scripts/fullcalendar/fullcalendar.js",
- //                       "~/Scripts/fullcalendar/gcal.js"));
-
- //           bundles.Add(new StyleBundle("~/Content/dialog/css").Include(
- //               "~/Content/dialog/basic.css"));
-
- //           bundles.Add(new StyleBundle("~/Content/themes/base/css").Include(
- //                       "~/Content/themes/base/jquery.ui.core.css",
-//                        "~/Content/themes/base/jquery.ui.datepicker.css",
-//                        "~/Content/themes/base/jquery.ui.theme.css"));
-
+ 
             bundles.Add(new StyleBundle("~/Content/slideshow/css").Include(
                         "~/Content/slideshow/demo.css",
                         "~/Content/slideshow/noscript.css",
                         "~/Content/slideshow/reset.css",
                         "~/Content/slideshow/style.css"));
-
-//            bundles.Add(new StyleBundle("~/Content/fullcalendar/css").Include(
-//                        "~/Content/fullcalendar/fullcalendar.css",
-//                        "~/Content/fullcalendar/fullcalendar.print.css"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                         "~/Content/mobiscroll-2.1.custom.min.css"));
